@@ -44,16 +44,16 @@ private drawBars(data: any[]): void {
     .attr("transform", "translate(-10,0)rotate(-45)")
     .style("text-anchor", "end");
 
-    // Create the Y-axis band scale
+    // Crea la banda scala del eje y
     const y = d3.scaleLinear()
     .domain([0, 200000])
     .range([this.height, 0]);
 
-    // Draw the Y-axis on the DOM
+    // Dibuja el eje y en el dom
     this.svg.append("g")
     .call(d3.axisLeft(y));
 
-    // Create and fill the bars
+    // Crea y llena las barras
     this.svg.selectAll("bars")
     .data(data)
     .enter()
